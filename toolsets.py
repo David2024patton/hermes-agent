@@ -65,6 +65,8 @@ _HERMES_CORE_TOOLS = [
     # zero schema footprint. Gated via check_fn in tools/kanban_tools.py.
     "kanban_show", "kanban_complete", "kanban_block", "kanban_heartbeat",
     "kanban_comment", "kanban_create", "kanban_link",
+    # Agentic autonomy system
+    "agentic_execute_task", "agentic_get_roles", "agentic_get_status",
 ]
 
 
@@ -498,6 +500,12 @@ TOOLSETS = {
         "description": "Gateway toolset - union of all messaging platform tools",
         "tools": [],
         "includes": ["hermes-telegram", "hermes-discord", "hermes-whatsapp", "hermes-slack", "hermes-signal", "hermes-bluebubbles", "hermes-homeassistant", "hermes-email", "hermes-sms", "hermes-mattermost", "hermes-matrix", "hermes-dingtalk", "hermes-feishu", "hermes-wecom", "hermes-wecom-callback", "hermes-weixin", "hermes-qqbot", "hermes-webhook", "hermes-yuanbao"]
+    },
+
+    "agentic": {
+        "description": "Agentic autonomy system - task decomposition, sub-agent orchestration, and multi-agent coordination",
+        "tools": ["agentic_execute_task", "agentic_get_roles", "agentic_get_status"],
+        "includes": []
     }
 }
 
